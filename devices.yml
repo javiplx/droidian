@@ -22,11 +22,6 @@
     - adaptation-lenovo-bronco-configs
     - ofono-ril-plugin
 
-.volla_mimameid_packages:
-  packages: &volla_mimameid_packages
-    - adaptation-volla-mimameid-h12
-    - adaptation-volla-mimameid-h12-configs
-
 ########################################################################
 # Recovery-flashable rootfses                                          #
 ########################################################################
@@ -36,7 +31,7 @@ rootfs:
   arch: [arm64]
   edition: phosh
   variant: phone
-  apilevel: [28, 29, 30, 32, 33]
+  apilevel: [32]
 
   packages: *adaptation_generic_packages
 
@@ -58,7 +53,7 @@ rootfs:
 
 # Google Pixel 3a (sargo)
 google_sargo:
-  type: image
+  type: rootfs
   arch: arm64
   edition: phosh
   variant: phone
@@ -72,24 +67,10 @@ google_sargo:
 
 # Lenovo Thinkphone by Motorola (bronco)
 lenovo_bronco:
-  type: image
-  arch: arm64
-  edition: [phosh]
-  variant: phone
-  apilevel: 32
-
-  packages: *lenovo_bronco_packages
-
-#
-# Volla
-#
-
-# Volla Phone 22 (mimameid)
-volla_mimameid:
-  type: image
+  type: rootfs
   arch: arm64
   edition: phosh
   variant: phone
   apilevel: 32
 
-  packages: *volla_mimameid_packages
+  packages: *lenovo_bronco_packages
